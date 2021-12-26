@@ -1,10 +1,9 @@
-h1, h2 {
+h1, h2, h3 {
     font-family: Montserrat, sans-serif;
-    font-weight: bold;
 }
 
-h1 {
-    font-size: 30px;
+header {
+    margin-top: 50px;
 }
 
 header > h1 {
@@ -12,35 +11,12 @@ header > h1 {
 }
 
 h2 {
-    font-size: 20px;
+    color: rgb(153, 153, 153);
+    text-decoration: underline;
 }
 
-main {
-    height: auto;
-    margin: 0 auto;
-    width: 610px;
-    min-width: 500px;
-    max-width: 800px;
-}
-
-section {
-    height: 100%;
-}
-
-#colors {
-    width: 200px;
-    float: left;
-}
-
-#text {
-    width: 400px;
-    float: right;
-}
-
-#colors > div {
-    height: 100px;
-    width: 100px;
-    border-radius: 50%;
+p, li {
+    font-family: 'Libre Baskerville', serif;
 }
 
 #matte-black {
@@ -59,6 +35,69 @@ section {
     background-color: #1E5D88;
 }
 
-p, li {
-    font-family: 'Libre Baskerville', serif;
+main {
+    display: grid;
+    grid-template-areas:
+        'colors fonts'
+        'colors text-styles';
+    width: 675px;
+    margin: 0 auto;
+}
+
+#colors {
+    grid-area: colors;
+}
+
+#fonts {
+    grid-area: fonts;
+}
+
+#text-styles {
+    grid-area: text-styles;
+}
+
+.color {
+    height: auto;
+    display: grid;
+    grid-template-areas: 'color name hex';
+    margin-top: 20px;
+}
+
+.color:first-child {
+    margin-top: 0;
+}
+
+.color > div {
+    height: 75px;
+    width: 75px;
+    border-radius: 50%;
+    grid-area: color;
+}
+
+.color > h3 {
+    width: 125px;
+    height: 22px;
+    margin: auto auto;
+}
+
+.color > h3:first-child {
+    grid-area: name;
+}
+
+.color > h3:last-child {
+    grid-area: hex;
+    text-align: center;
+    color: lightgray;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.italics {
+    font-style: italic;
+}
+
+#montserrat > p {
+    font-family: Montserrat;
 }
